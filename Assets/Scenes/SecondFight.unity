@@ -7478,7 +7478,7 @@ MonoBehaviour:
   shitTalkinText: {fileID: 131504009}
   playerintText: {fileID: 1881199982}
   bossintText: {fileID: 1294090639}
-  recoverAmount: 22
+  recoverAmount: 28
   playerPanel: {fileID: 1960979160}
   bossPanel: {fileID: 743217168}
   isPlayerTrue: 0

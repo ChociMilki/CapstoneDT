@@ -27,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 511514426460243430}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 2, z: 0}
-  m_LocalScale: {x: 1, y: 8, z: 1}
+  m_LocalScale: {x: 1, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -47,10 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   combatantName: Lemon, Sloth of Lime
   combatantLevel: 4
-  damage: 12
+  damage: 14
   strongAttackDamage: 80
-  maxHP: 150
-  currentHP: 150
+  maxHP: 200
+  currentHP: 200
 --- !u!212 &9069492199828216639
 SpriteRenderer:
   m_ObjectHideFlags: 0
