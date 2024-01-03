@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -10,9 +12,10 @@ public class DialogueTrigger : MonoBehaviour
     [SerializeField] private GameObject visualCue;
 
     [Header("Ink JSON")]
-    [SerializeField] private TextAsset inkJSON; 
+    [SerializeField] private TextAsset inkJSON;
 
-
+    [Header(" Engage in Conversation Button")]
+    [SerializeField] private Button engageConvo; 
     private bool playerInRange;
 
     private KeyCode interactKey = KeyCode.I; 
@@ -54,7 +57,7 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(true);
             // exhibit a 
 
-        //    if(Input.GetKeyDown(interactKey))
+
         if(/*Interactor.GetInstance().isInteractPressed &&*/ Input.GetKeyDown(interactKey))
      
                 {

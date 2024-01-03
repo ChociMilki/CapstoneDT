@@ -7,14 +7,14 @@ using UnityEngine.InputSystem;
 /// <summary>
 /// tt:  singleton interactor implements interface IInteract, allowing player to press I to engage in interactions using the input system. 
 /// </summary>
-public  class Interactor : MonoBehaviour, IInteract
+public class Interactor : MonoBehaviour, IInteract
 {
     private static Interactor instance;
     private void Awake()
     {
         if (instance != null && instance != this) { Destroy(this); return; }
         instance = this;
-        isInteractPressed = false; 
+        isInteractPressed = false;
     }
     public static Interactor GetInstance()
     {
@@ -22,9 +22,9 @@ public  class Interactor : MonoBehaviour, IInteract
     }
     [Header("Interactor Configurations")]
     [SerializeField] private GameObject player;
-      public bool  isInteractPressed;
-      public bool  isTalkPressed;
-    public bool isSubmitPressed; 
+    public bool isInteractPressed;
+    public bool isTalkPressed;
+    public bool isSubmitPressed;
 
 
     private KeyCode interactKey = KeyCode.I;
@@ -33,30 +33,30 @@ public  class Interactor : MonoBehaviour, IInteract
 
     private KeyCode submitKey = KeyCode.Return;
 
-    
 
- 
+
+
     private void Update()
     {
         GetInteractPressed();
         GetTalkPressed();
         GetSubmitPressed();
     }
-/// <summary>
-/// THIS WORKS BUT SHOULD RETURN FALSE OTHERWISE INSTEAD OF GKU BECAUSE
-/// OF TIED FUNCTIONALITIES TO DIALOGUE TRIGGER
-/// </summary>
+    /// <summary>
+    /// THIS WORKS BUT SHOULD RETURN FALSE OTHERWISE INSTEAD OF GKU BECAUSE
+    /// OF TIED FUNCTIONALITIES TO DIALOGUE TRIGGER
+    /// </summary>
     public void GetInteractPressed()
     {
-        
+
         if (Input.GetKeyDown(interactKey))
         {
-           isInteractPressed = true;
-            Debug.Log("Interaction engaged"); 
+            isInteractPressed = true;
+            Debug.Log("Interaction engaged");
         }
-        if(Input.GetKeyUp(interactKey))
+        if (Input.GetKeyUp(interactKey))
         {
-            isInteractPressed = true; 
+            isInteractPressed = true;
         }
         // return?
     }
