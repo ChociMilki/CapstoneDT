@@ -29,16 +29,16 @@ public class PlayerKontroller : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         Vector3 direction = transform.right * horizontalInput;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + direction, moveSpeed * Time.deltaTime);
-        Debug.Log("moving "); 
+        
     }
     private void FlipSprite()
     {
         // Flip the sprite based on the direction
-        if (horizontalInput < 0)
+        if (horizontalInput > 0)
         {
             playerSprite.flipX = true;
         }
-        else if (horizontalInput > 0)
+        else if (horizontalInput < 0)
         {
             playerSprite.flipX = false;
         }

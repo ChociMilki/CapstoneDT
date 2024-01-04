@@ -13,6 +13,8 @@ TagManager:
   - Sound
   - FIGHTA
   - FIGHTB
+  - Dialogue
+  - Environment
   layers:
   - Default
   - TransparentFX
@@ -20,8 +22,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - GameInteraction
+  - Environment
   - 
   - 
   - 
