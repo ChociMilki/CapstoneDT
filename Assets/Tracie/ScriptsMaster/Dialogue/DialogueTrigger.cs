@@ -4,6 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Assertions.Must;
 
 public class DialogueTrigger : MonoBehaviour
 {
@@ -17,18 +18,24 @@ public class DialogueTrigger : MonoBehaviour
     [Header(" Engage in Conversation Button")]
     [SerializeField] private Button engageConvo; 
     private bool playerInRange;
+    private bool playerReading; 
 
     private KeyCode interactKey = KeyCode.I; 
 
     private void Awake()
     {
+        // for visual cue + trigger ote 
         playerInRange = false;
+        // for continuing without on trigger enter 
+        playerReading = false; 
+
         visualCue.SetActive(false); 
     }
 
     private void Update()
     {
-        ShowVisualCue(); 
+        ShowVisualCue();
+        engageConvo.onClick.AddListener(HasPlayerClicked); 
     }
 
     private void OnTriggerEnter2D(Collider2D collider)
@@ -46,6 +53,15 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange= false;
         }
     }
+
+    // if player clicks continue reading button , the bool is set to true , works like OTE for narrative reading 
+    private void HasPlayerClicked()
+    {
+        playerReading = true;
+        engageConvo.onClick.RemoveListener(HasPlayerClicked);
+    }
+
+
     /// <summary>
     ///  error might spawn until STOPNPC implemented 
     /// </summary>
@@ -72,4 +88,11 @@ public class DialogueTrigger : MonoBehaviour
             visualCue.SetActive(false);
         }
     }
+
+
+    private void ShowNarrativeCue()
+    {
+
+    }
+   
 }
