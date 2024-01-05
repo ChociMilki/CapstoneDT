@@ -15,6 +15,7 @@ TagManager:
   - FIGHTB
   - Dialogue
   - Environment
+  - UI
   layers:
   - Default
   - TransparentFX
@@ -54,4 +55,7 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1570968113
+    locked: 0
+  - name: Narrative
+    uniqueID: 970778273
     locked: 0

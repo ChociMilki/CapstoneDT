@@ -6,6 +6,7 @@ using Ink.Runtime;
 using UnityEngine.EventSystems; 
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEngine.UI;
 /// <summary>
 /// tt : 
 /// inkJSON files are sent to the Dialogue Manager which then 
@@ -44,6 +45,9 @@ public class DialogueManager : MonoBehaviour
     private TextMeshProUGUI[] choicesText; 
     private Story currentStory;
     private float waitFor = .2f;
+
+    //[Header("Narrative Reading Configurations")]
+    //[SerializeField] private GameObject continueReadingButton; 
 
     [Header("Parameters Configurations")]
     [SerializeField] private float typingSpeed = .04f;
